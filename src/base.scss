@@ -1,0 +1,83 @@
+$navColor: #06c1ae;
+//三角形混合
+@mixin arrow($w: 10px, $c: #000, $deg: 45deg) {
+	font-size: 0;
+	border: $w solid transparent;
+	border-top-color: $c;
+	border-left-color: $c;
+	transform: rotate($deg);
+}
+//清除浮动混合
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// 定义三角函数
+//@mixin arrow($w: 10px, $c: #333, $dir: top) {
+//	// 兼容行内元素和块元素
+//	width: 0;
+//	font-size: 0;
+//	// 所有边变成透明
+//	border: $w solid transparent;
+//	// 特殊边上色
+//	border-#{$dir}-color: $c;
+//}
+@mixin contins {
+	width: 90%;
+	height: 200px;
+	margin: 0 auto;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	text-align: center;
+	color: #fff;
+	box-sizing: border-box;
+}
+@mixin txtHide {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@mixin drawLine($w: 100%, $c: #F3F3F3, $h: 1px) {
+	width: $w;
+	margin: 0 auto;
+	height: $h;
+	background-color: $c;
+}
+
+// 列表样式
+%items {
+	background: #fff;
+	li {
+		margin: 0 10px;
+		padding: 10px 0;
+		border-bottom: 1px solid #ccc;
+		display: flex;
+	}
+	img {
+		width: 100px;
+		height: 60.6px;
+	}
+	.content {
+		margin-left: 10px;
+		flex: 1;
+	}
+	h3 {
+		height: 45px;
+		line-height: 20px;
+		font-size: 14px;
+	}
+	p {
+		font-size: 12px;
+	}
+	.price {
+		color: $navColor;
+		margin-right: 6px;
+	}
+	.sales {
+		float: right;
+	}
+}
